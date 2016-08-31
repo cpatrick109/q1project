@@ -1,0 +1,72 @@
+body {
+    background-image: url("images/cards/cards/table2.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+}
+#dealerCard1 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    top: 0;
+    margin-left: 600px;
+}
+#dealerCard2 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    top: 0;
+    margin-left: 680px;
+}
+#playerCard1 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    margin-left: 600px;
+    background-image: 100%;
+}
+#playerCard2 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    margin-left: 680px;
+}
+#dealerCards {
+    color: none;
+}
+#playerCards {
+    color: none;
+}
+#deckOfCards {
+    background-color: pink;
+    height: 100px;
+    width: 75px;
+    margin: 0 auto;
+    margin-top: 200px;
+    background-image: url("images/cards/cards/frontcard.jpg");
+    background-size: 100%;
+}
+#btnHit, #btnStick, #btnRestart {
+    display: none;
+    float: left;
+}
