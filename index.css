@@ -3,12 +3,6 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
 }
-a {
-    text-decoration: none;
-}
-a:hover {
-    color: white;
-}
 #dealerCard1 {
     height: 100px;
     width: 75px;
@@ -28,6 +22,36 @@ a:hover {
     position: fixed;
     top: 0;
     margin-left: 680px;
+}
+#dealerCard3 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    top: 0;
+    margin-left: 760px;
+}
+#dealerCard4 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    top: 0;
+    margin-left: 840px;
+}
+#dealerCard5 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    top: 0;
+    margin-left: 920px;
 }
 #playerCard1 {
     height: 100px;
@@ -51,11 +75,35 @@ a:hover {
     bottom: 0;
     margin-left: 680px;
 }
-#dealerCards {
-    color: none;
+#playerCard3 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    margin-left: 760px;
 }
-#playerCards {
-    color: none;
+#playerCard4 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    margin-left: 840px;
+}
+#playerCard5 {
+    height: 100px;
+    width: 75px;
+    background-color: pink;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    margin-left: 920px;
 }
 #deckOfCards {
     background-color: pink;
@@ -66,7 +114,13 @@ a:hover {
     background-image: url("images/frontcard.jpg");
     background-size: 100%;
 }
-#btnHit, #btnStick, #btnRestart {
-    display: none;
-    float: left;
+
+}
+#hit {
+    margin: 0 auto;
+    margin-top: 200px;
+}
+#myCard {
+    height: 100px;
+    width: 75px;
 }

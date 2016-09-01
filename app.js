@@ -3,74 +3,126 @@ $(document).ready(function() {
 
     //define new deck function
     function getNewDeck() {
-        return $.get("http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1") //(new deck shuffled)
-            // return $.get("http://deckofcardsapi.com/api/deck/new/")(new deck not shuffled)
-    };
+        return $.get("http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"); //(new deck shuffled)
+        // return $.get("http://deckofcardsapi.com/api/deck/new/")(new deck not shuffled)
+    }
+    //define hit card function
+    function drawCard(id) {
+        return $.get(`http://deckofcardsapi.com/api/deck/${id}/draw/?count=1`);
+    }
     //define deal 2 cards function
     function deal2Cards(id) {
-        return $.get(`http://deckofcardsapi.com/api/deck/${id}/draw/?count=2`)
+        return $.get(`http://deckofcardsapi.com/api/deck/${id}/draw/?count=4`);
     }
     // add to get new deck button event listener
     $('#newGame').click(function() {
-            getNewDeck().then(function(data) {
-                console.log('data', data);
-                var id = data.deck_id
-                deckId = id;
-                console.log('deckId', deckId);
-            })
+        getNewDeck().then(function(data) {
+            console.log('data', data);
+            var id = data.deck_id;
+            deckId = id;
+            console.log('deckId', deckId);
+        });
 
-        })
-        //add a button to deal cards
+    });
+    //add a button to deal cards
     $('#deal').click(function() {
         deal2Cards(deckId).then(function(dealData) {
             console.log('dealData', dealData);
-        })
-    })
+            // console.log(dealData.cards[0].image)
+            var imgSource = dealData.cards[0].image;
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            $("#playerCard1").append(imgElement);
+            var imgSource = dealData.cards[1].image;
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            $("#playerCard2").append(imgElement);
+            var imgSource = dealData.cards[2].image;
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            $("#dealerCard1").append(imgElement);
+            var imgSource = dealData.cards[3].image;
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            $("#dealerCard2").append(imgElement);
 
-
-
-
-    // getCards();
-
-
-
-    // function getCards() {
-    //     $.get("http://deckofcardsapi.com/api/deck/new/").then(function(data) {
-    //         console.log(data);
-    //         var id = data.deck_id
-    //         console.log('id', id);
-    //         return id
-    //     })
+        });
+    });
+    //add a button to hit cards
+    $('#hit').click(function() {
+        drawCard(deckId).then(function(data) {
+            console.log('data', data);
+            var imgSource = data.cards[0].image;
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            $("#playerCards").append(imgElement);
+            // var cardValue = Dealdata.cards[0].value;
+            // var cardSrc = $(``)
+        });
+    });
+    // $('#countCard')(function(){
     //
-    // }
-    // var myDeckId = (function() {
-    //     'use strict';
-    //     $.get("http://deckofcardsapi.com/api/deck/new/").then(function(data) {
-    //         var id = data.deck_id
-    //         return id;
-    //     })
-    // }());
-
-    // console.log('myDeckId', myDeckId);
-
-    // getCards().then(function(data) {
-    //     console.log('new data', data);
-    //     let deckID = data.deck_id
-    //     console.log(deckID);
-    //     deal2Cards(deckID).then(function(cardData) {
-    //         console.log(cardData);
-    //     })
     // })
-
-
-
 
 
 
 });
 
 
+
+
+// ACE = 11;
+// KING = 10;
+// QUEEN = 10;
+// JACK = 10;
+// 10 = 10;
+// "9" = 9;
+// "8" = 8;
+// "7" = 7;
+// "6" = 6;
+// "5" = 5;
+// "4" = 4;
+// "3" = 3;
+// "2" =2;
+
+
+
+
+// getCards();
+
+
+
+// function getCards() {
+//     $.get("http://deckofcardsapi.com/api/deck/new/").then(function(data) {
+//         console.log(data);
+//         var id = data.deck_id
+//         console.log('id', id);
+//         return id
+//     })
 //
+// }
+// var myDeckId = (function() {
+//     'use strict';
+//     $.get("http://deckofcardsapi.com/api/deck/new/").then(function(data) {
+//         var id = data.deck_id
+//         return id;
+//     })
+// }());
+
+// console.log('myDeckId', myDeckId);
+
+// getCards().then(function(data) {
+//     console.log('new data', data);
+//     let deckID = data.deck_id
+//     console.log(deckID);
+//     deal2Cards(deckID).then(function(cardData) {
+//         console.log(cardData);
+//     })
+// })
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
 
 
 
