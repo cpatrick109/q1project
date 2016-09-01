@@ -41,7 +41,9 @@ $(document).ready(function() {
             var imgSource = dealData.cards[3].image;
             var imgElement = $(`<img src="${imgSource}"id="myCard">`)
             $("#dealerCard2").append(imgElement);
-
+            // var cardValue = dealData.cards[0].value;
+            // var cardElement = $(`<img src="${cardValue}"`)
+            // $("#dealerCard2").append(cardElement);
         });
     });
     //add a button to hit cards
@@ -50,27 +52,23 @@ $(document).ready(function() {
             console.log('data', data);
             var imgSource = data.cards[0].image;
             var imgElement = $(`<img src="${imgSource}"id="myCard">`)
-            $("#playerCards").append(imgElement);
-            // var cardValue = Dealdata.cards[0].value;
-            // var cardSrc = $(``)
+            $(".card").append('<div>').append(imgElement);
         });
     });
-    // $('#countCard')(function(){
-    //
-    // })
-
-
-
 });
+// $('#countCard')(function(){
+//
+// })
 
 
 
 
-// ACE = 11;
-// KING = 10;
-// QUEEN = 10;
-// JACK = 10;
-// 10 = 10;
+
+// "ACE" = 11;
+// "KING" = 10;
+// "QUEEN" = 10;
+// "JACK" = 10;
+// "10" = 10;
 // "9" = 9;
 // "8" = 8;
 // "7" = 7;
