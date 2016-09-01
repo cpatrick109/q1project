@@ -5,7 +5,7 @@
 #myContainer {
     height: 100vh;
     width: 100%;
-    background-image: url("images/cards/strip.jpg");
+    background-image: url("images/strip.jpg");
     background-size: 100%;
     z-index: -100;
     opacity: 0.5;

@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/cards/cards/table2.png");
+    background-image: url("images/table2.png");
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -63,7 +63,7 @@ a:hover {
     width: 75px;
     margin: 0 auto;
     margin-top: 200px;
-    background-image: url("images/cards/cards/frontcard.jpg");
+    background-image: url("images/frontcard.jpg");
     background-size: 100%;
 }
 #btnHit, #btnStick, #btnRestart {

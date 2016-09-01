@@ -4,44 +4,27 @@
 <head>
     <meta charset="utf-8">
     <title>Blackjack</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
-    <meta name="author" content="Amanpreet Singh">
-    <meta name="author" content="apsdehal" />
-
+    <link href="index.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="main">
-        <h1>Click to reveal your cards</h1>
-        <h3 id="hdrTotal"></h3>
-        <h3 id="hdrResult"></h3>
-
-        <div id="my_hand">
-        </div>
-        <div id="result"><img src="images/check.png" id="imgResult"></div>
-        <div id="controls">
-            <div id="btnDeal">
-                <img src="images/deck_small.jpg">
-            </div>
-            <div id="btnHit">
-                <img src="images/hit_small.jpg">
-            </div>
-            <div id="btnStick">
-                <img src="images/stick_small.jpg">
-            </div>
-            <div id="btnRestart">
-                <img src="images/restart_small.jpg">
-            </div>
-        </div>
+    <div id="dealerCards">
+        <div id="dealerCard1">dealerCard1</div>
+        <br>
+        <div id="dealerCard2">dealerCard2</div>
     </div>
-    <div id="rules">
-        <a href="rules.html">
- Rules to Play
- </a>
+    <br>
+    <div id="playerCards">
+        <div id="playerCard1">playerCard1</div>
+        <br>
+        <div id="playerCard2">playerCard2</div>
     </div>
-    <script src="scripts/jquery-1.6.2.min.js"></script>
-    <script src="scripts/my_scripts.js"></script>
+    <button id="newGame" type="button" name="button">New Game</button>
+    <div id="deckOfCards">
+        <button id="deal">Deal</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
