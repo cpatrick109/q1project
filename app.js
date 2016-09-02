@@ -1,6 +1,9 @@
 $(document).ready(function() {
     var deckId;
-
+    var hit = 0;
+    $("#newHand").click(function() {
+        $("#bothHands").remove();
+    });
     //define new deck function
     function getNewDeck() {
         return $.get("http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"); //(new deck shuffled)
@@ -20,6 +23,7 @@ $(document).ready(function() {
             console.log('data', data);
             var id = data.deck_id;
             deckId = id;
+            hit = 0;
             console.log('deckId', deckId);
         });
 
@@ -30,20 +34,20 @@ $(document).ready(function() {
             console.log('dealData', dealData);
             // console.log(dealData.cards[0].image)
             var imgSource = dealData.cards[0].image;
-            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`);
             $("#playerCard1").append(imgElement);
             var imgSource = dealData.cards[1].image;
-            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`);
             $("#playerCard2").append(imgElement);
             var imgSource = dealData.cards[2].image;
-            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`);
             $("#dealerCard1").append(imgElement);
             var imgSource = dealData.cards[3].image;
-            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`);
             $("#dealerCard2").append(imgElement);
-            // var cardValue = dealData.cards[0].value;
-            // var cardElement = $(`<img src="${cardValue}"`)
-            // $("#dealerCard2").append(cardElement);
+            var cardValue = dealData.cards[0].value;
+            var cardElement = $(`<img src"${cardValue}"`);
+            $("#dealerCard2").append(cardElement);
         });
     });
     //add a button to hit cards
@@ -51,11 +55,28 @@ $(document).ready(function() {
         drawCard(deckId).then(function(data) {
             console.log('data', data);
             var imgSource = data.cards[0].image;
-            var imgElement = $(`<img src="${imgSource}"id="myCard">`)
-            $(".card").append('<div>').append(imgElement);
+            var imgElement = $(`<img src="${imgSource}"id="myCard">`);
+            if (hit == 0) {
+                $(".pcard3").append(imgElement);
+            } else if (hit == 1) {
+                $(".pcard4").append(imgElement);
+            } else if (hit == 2) {
+                $(".pcard5").append(imgElement);
+            }
+            hit++;
+            // if (hit == 0) {
+            //     $(".dcard3").append(imgElement);
+            // } else if (hit == 1) {
+            //     $(".dcard4").append(imgElement);
+            // } else
+            // if (hit == 2) {
+            //     $(".dcard5").append(imgElement);
+            // }
+            // $(".card1").append('<div>').append(imgElement);
         });
     });
 });
+
 // $('#countCard')(function(){
 //
 // })
@@ -64,19 +85,6 @@ $(document).ready(function() {
 
 
 
-// "ACE" = 11;
-// "KING" = 10;
-// "QUEEN" = 10;
-// "JACK" = 10;
-// "10" = 10;
-// "9" = 9;
-// "8" = 8;
-// "7" = 7;
-// "6" = 6;
-// "5" = 5;
-// "4" = 4;
-// "3" = 3;
-// "2" =2;
 
 
 
@@ -125,15 +133,16 @@ $(document).ready(function() {
 
 
 
-
-
-
+//
+//
+//
 // var used_cards = new Array();
 //
 // function card(name, suit, value) {
 //     this.name = name;
 //     this.suit = suit;
 //     this.value = value;
+//     this.image = image;
 // }
 // var deck = [
 //     new card('Ace', 'Hearts', 11),
@@ -198,29 +207,29 @@ $(document).ready(function() {
 //
 // document.getElementById("playerCard1").innerHTML = "<img src='images/cards/cards/Spades/Ace.jpg' />";
 // console.log(pickCard())
-
+//
 // var hand = {
 //     cards: new Array(),
 //     current_total: 0,
-
-// sumCardTotal: function() {
-//     this.current_total = 0;
-//     for (var i = 0; i < this.cards.length; i++) {
-//         var c = this.cards[i];
-//         this.current_total += c.value;
-//     }
-// $("#hdrTotal").html("Total: " + this.current_total);
 //
-// if (this.current_total > 21) {
-//     $("#btnStick").trigger("click");
-//     $("#imgResult").attr('src', 'images/x2.png');
-//     $("#hdrResult").html("BUST!")
-//         .attr('class', 'lose');
-// } else if (this.current_total == 21) {
-//     $("#btnStick").trigger("click");
-//     $("#imgResult").attr('src', 'images/check.png');
-//     $("#hdrResult").html("BlackJack!")
-//         .attr('class', 'win');
-// }
-// }
+//     sumCardTotal: function() {
+//         this.current_total = 0;
+//         for (var i = 0; i < this.cards.length; i++) {
+//             var c = this.cards[i];
+//             this.current_total += c.value;
+//         }
+//         $("#hdrTotal").html("Total: " + this.current_total);
+//
+//         if (this.current_total > 21) {
+//             $("#btnStick").trigger("click");
+//             $("#imgResult").attr('src', 'images/x2.png');
+//             $("#hdrResult").html("BUST!")
+//                 .attr('class', 'lose');
+//         } else if (this.current_total == 21) {
+//             $("#btnStick").trigger("click");
+//             $("#imgResult").attr('src', 'images/check.png');
+//             $("#hdrResult").html("BlackJack!")
+//                 .attr('class', 'win');
+//         }
+//     }
 // };
