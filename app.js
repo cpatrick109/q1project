@@ -4,6 +4,36 @@ $(document).ready(function() {
     $("#newHand").click(function() {
         $(".cardHolder").children().remove();
     });
+
+    var dealDataArr = [];
+    var dealrCards = []
+    var playrCards = []
+    var hitDataArr = [];
+    var playerTotal;
+
+    function sumValues(arr) {
+        return arr.reduce((prevVal, currVal) => {
+            return prevVal + currVal
+        }, 0)
+    }
+
+    cardMap = {
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "JACK": 10,
+        "QUEEN": 10,
+        "KING": 10,
+        "ACE": 11
+    };
+
+
     //define new deck function
     function getNewDeck() {
         return $.get("http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"); //(new deck shuffled)
@@ -49,6 +79,8 @@ $(document).ready(function() {
             var cardElement = $(`${cardValue}`);
             $("#dealerCard2").append(cardElement);
             console.log(cardValue)
+            dealDataArr = dealData.cards;
+            sumCardTotal();
 
 
 
@@ -78,6 +110,19 @@ $(document).ready(function() {
 
         });
     });
+
+    function sumCardTotal() {
+        console.log(dealDataArr.length)
+        var current_total;
+        var dealerTotal = cardMap[dealDataArr[0].value] + cardMap[dealDataArr[1].value]
+        console.log("dealerTotal", dealerTotal)
+        current_total = 0;
+        for (var i = 0; i < dealDataArr.length; i++) {
+            var crd = dealDataArr[i];
+            current_total += cardMap[crd.value];
+            console.log("cardMap Value", current_total);
+        }
+    }
 });
 
 

@@ -1,9 +1,9 @@
 # q1project
 
 
-3. assign values to the cards
+<!-- 3. assign values to the cards -->
 
-4. fix being able to deal multiple times
+<!-- 4. fix being able to deal multiple times -->
 
 <!-- 2. when hand is over clear the divs -->
 
