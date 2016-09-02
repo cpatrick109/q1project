@@ -33,7 +33,6 @@ $(document).ready(function() {
         "ACE": 11
     };
 
-
     //define new deck function
     function getNewDeck() {
         return $.get("http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"); //(new deck shuffled)
@@ -82,9 +81,6 @@ $(document).ready(function() {
             dealDataArr = dealData.cards;
             sumCardTotal();
 
-
-
-
         });
     });
     //add a button to hit cards
@@ -107,7 +103,6 @@ $(document).ready(function() {
                 $(".pcard5").append(imgElement);
             }
             hit++;
-
         });
     });
 
@@ -125,6 +120,7 @@ $(document).ready(function() {
     }
 });
 
+//features to implement in the future
 
 
 //dealer append hit cards to div
@@ -141,13 +137,6 @@ $(document).ready(function() {
 // $('#countCard')(function(){
 //
 // })
-
-
-
-
-
-
-
 
 
 // var hand = {
