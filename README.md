@@ -11,6 +11,5 @@
 
 <!-- 1. when you hit, append the next card to playercards rather than appending to playerCard3-5 -->
 
-6. if card total > 21   "ACE" = 1
 
 7. style the page
