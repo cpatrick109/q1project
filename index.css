@@ -3,6 +3,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
 #dealerCard1 {
     height: 100px;
     width: 75px;
@@ -12,6 +13,7 @@ body {
     top: 0;
     margin-left: 600px;
 }
+
 #dealerCard2 {
     height: 100px;
     width: 75px;
@@ -21,6 +23,7 @@ body {
     top: 0;
     margin-left: 680px;
 }
+
 #dealerCard3 {
     height: 100px;
     width: 75px;
@@ -30,6 +33,7 @@ body {
     top: 0;
     margin-left: 760px;
 }
+
 #dealerCard4 {
     height: 100px;
     width: 75px;
@@ -39,6 +43,7 @@ body {
     top: 0;
     margin-left: 840px;
 }
+
 #dealerCard5 {
     height: 100px;
     width: 75px;
@@ -48,6 +53,7 @@ body {
     top: 0;
     margin-left: 920px;
 }
+
 #playerCard1 {
     height: 100px;
     width: 75px;
@@ -59,6 +65,7 @@ body {
     margin-left: 600px;
     background-image: 100%;
 }
+
 #playerCard2 {
     height: 100px;
     width: 75px;
@@ -68,6 +75,7 @@ body {
     bottom: 0;
     margin-left: 680px;
 }
+
 #playerCard3 {
     height: 100px;
     width: 75px;
@@ -77,6 +85,7 @@ body {
     bottom: 0;
     margin-left: 760px;
 }
+
 #playerCard4 {
     height: 100px;
     width: 75px;
@@ -86,6 +95,7 @@ body {
     bottom: 0;
     margin-left: 840px;
 }
+
 #playerCard5 {
     height: 100px;
     width: 75px;
@@ -95,6 +105,7 @@ body {
     bottom: 0;
     margin-left: 920px;
 }
+
 #deckOfCards {
     height: 100px;
     width: 75px;
@@ -104,6 +115,7 @@ body {
     background-size: 100%;
 }
 
+
 }
 #hit {
     margin: 0 auto;
@@ -112,4 +124,117 @@ body {
 #myCard {
     height: 100px;
     width: 75px;
+}
+#hitCard {
+    background-color: #44c767;
+    -moz-border-radius: 28px;
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+}
+#hitCard:hover {
+    background-color: #5cbf2a;
+}
+#hitCard:active {
+    position: relative;
+    top: 1px;
+}
+#cardTotalPlayer {
+    height: 100px;
+    width: 75px;
+    margin: 0 auto;
+    margin-top: 200px;
+    background-size: 100%;
+}
+#cardTotalDealer {}
+#hitCard {
+    background-color: #e60000;
+    -moz-border-radius: 28px;
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    border: 1px solid #660000;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+}
+#hitCard:hover {
+    background-color: #660000;
+}
+#hitCard:active {
+    position: relative;
+    top: 1px;
+}
+#deal {
+    background-color: #44c767;
+    -moz-border-radius: 28px;
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    border: 1px solid #5cbf2a;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 6px 9px;
+    text-decoration: none;
+}
+#deal:hover {
+    background-color: #5cbf2a;
+}
+#deal:active {
+    position: relative;
+    top: 1px;
+}
+#newGame {
+    background-color: #0000e6;
+    -moz-border-radius: 28px;
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    border: 1px solid #000080;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+}
+#newGame:hover {
+    background-color: #000080;
+}
+#newGame:active {
+    position: relative;
+    top: 1px;
+}
+#newHand {
+    background-color: #00b3b3;
+    -moz-border-radius: 28px;
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    border: 1px solid #008080;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+}
+#newHand:hover {
+    background-color: #008080;
+}
+#newHand:active {
+    position: relative;
+    top: 1px;
 }

@@ -2,6 +2,7 @@ $(document).ready(function() {
     var deckId;
     var hit = 0;
     $("#newHand").click(function() {
+        $('#deal').prop("disabled", false);
         $(".cardHolder").children().remove();
     });
 
@@ -59,6 +60,7 @@ $(document).ready(function() {
     });
     //add a button to deal cards
     $('#deal').click(function() {
+        $(this).prop("disabled", true);
         deal2Cards(deckId).then(function(dealData) {
             console.log('dealData', dealData);
             // console.log(dealData.cards[0].image)
@@ -80,7 +82,6 @@ $(document).ready(function() {
             console.log(cardValue)
             dealDataArr = dealData.cards;
             sumCardTotal();
-
         });
     });
     //add a button to hit cards
@@ -109,58 +110,15 @@ $(document).ready(function() {
     function sumCardTotal() {
         console.log(dealDataArr.length)
         var current_total;
-        var dealerTotal = cardMap[dealDataArr[0].value] + cardMap[dealDataArr[1].value]
-        console.log("dealerTotal", dealerTotal)
+        var playerTotal = cardMap[dealDataArr[0].value] + cardMap[dealDataArr[1].value]
+        console.log("playerTotal", playerTotal)
+
         current_total = 0;
         for (var i = 0; i < dealDataArr.length; i++) {
             var crd = dealDataArr[i];
             current_total += cardMap[crd.value];
             console.log("cardMap Value", current_total);
+
         }
     }
 });
-
-//features to implement in the future
-
-
-//dealer append hit cards to div
-// if (hit == 0) {
-//     $(".dcard3").append(imgElement);
-// } else if (hit == 1) {
-//     $(".dcard4").append(imgElement);
-// } else
-// if (hit == 2) {
-//     $(".dcard5").append(imgElement);
-// }
-// $(".card1").append('<div>').append(imgElement);
-
-// $('#countCard')(function(){
-//
-// })
-
-
-// var hand = {
-//     cards: new Array(),
-//     current_total: 0,
-//
-//     sumCardTotal: function() {
-//         this.current_total = 0;
-//         for (var i = 0; i < this.cards.length; i++) {
-//             var c = this.cards[i];
-//             this.current_total += c.value;
-//         }
-//         $("#hdrTotal").html("Total: " + this.current_total);
-//
-//         if (this.current_total > 21) {
-//             $("#btnStick").trigger("click");
-//             $("#imgResult").attr('src', 'images/x2.png');
-//             $("#hdrResult").html("BUST!")
-//                 .attr('class', 'lose');
-//         } else if (this.current_total == 21) {
-//             $("#btnStick").trigger("click");
-//             $("#imgResult").attr('src', 'images/check.png');
-//             $("#hdrResult").html("BlackJack!")
-//                 .attr('class', 'win');
-//         }
-//     }
-// };
